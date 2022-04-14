@@ -26,14 +26,12 @@ namespace TesteTrivium.Controllers
         }
 
         [HttpGet("")]
-
         public async Task<ActionResult<CompraItem>> GetCompraItem([FromQuery] int id)
         {
             return await _compraItemRepositorio.Get(id);
         }
 
         [HttpPost("")]
-
         public async Task<ActionResult<CompraItem>> PostCompraItem([FromBody] CompraItem compra)
         {
             var newCliente = await _compraItemRepositorio.Create(compra);
@@ -42,7 +40,6 @@ namespace TesteTrivium.Controllers
         }
 
         [HttpDelete("")]
-
         public async Task<ActionResult<CompraItem>> Delete([FromQuery] int id)
         {
             var compraDelete = await _compraItemRepositorio.Get(id);
@@ -55,7 +52,6 @@ namespace TesteTrivium.Controllers
         }
 
         [HttpPut("")]
-
         public async Task<ActionResult> PutClientes(int id, [FromBody] CompraItem compraItem)
         {
             if (id != compraItem.ID)
